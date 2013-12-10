@@ -1,10 +1,6 @@
-class EmployeesController < ApplicationController
+class Employee
   attr_reader :data, :position, :first_name, :last_name, :base_pay
   @@all_employees = []
-
-  def index
-    # make your employee objects available to the correlating view here
-  end
 
   def initialize(data)
     @first_name = data["first_name"]
