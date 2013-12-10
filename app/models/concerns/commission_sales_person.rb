@@ -1,6 +1,7 @@
 class CommissionSalesPerson < Employee
   attr_reader :commission_rate
-  def initialize(data)
+  def initialize(data
+    )
     super(data)
     @commission_rate = data["commission_rate"]
     @sales = Sale.all_sales

@@ -1,1 +1,6 @@
 <p>List your sales here</p>
+<% @sales.each do |sale| %>
+  <li><%= sale['last_name'] %> <%= sale['gross_sale_value'] %></li>
+<% end %>
+
+

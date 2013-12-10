@@ -1,8 +1,8 @@
 <p>List your employees here</p>
 <br/>
 <ul>
-<%= employees.each do |employee| %>
-  <li><% employee.first_name %> <% employee.last_name %> <% employee.position %></li>
-<%= end %>
+<% @employees.each do |employee| %>
+  <li><%= employee.first_name %> <%= employee.last_name %> <%= employee.position %></li>
+<% end %>
 </ul>
 

@@ -1,3 +1,5 @@
+#require_relative 'commision_sales_person'
+
 class Employee
   attr_reader :data, :position, :first_name, :last_name, :base_pay
   @@all_employees = []
@@ -10,7 +12,7 @@ class Employee
   end
 
   def self.load_employees
-    employee_info = '../../public/employees.csv'
+    employee_info = 'public/employees.csv'
     CSV.foreach(employee_info, headers:true) do |row|
       data = row.to_hash
         if data["position"] == 'developer' || data["position"] == 'designer'

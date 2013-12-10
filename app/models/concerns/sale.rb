@@ -8,7 +8,7 @@ class Sale
   end
 
   def self.load_sales
-    monthly_sales = '../../public/monthly_sales.csv'
+    monthly_sales = 'public/monthly_sales.csv'
     CSV.foreach(monthly_sales, headers:true) do |row|
       data = row.to_hash
         @@all_sales << data
