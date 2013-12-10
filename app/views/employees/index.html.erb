@@ -2,7 +2,23 @@
 <br/>
 <ul>
 <% @employees.each do |employee| %>
-  <li><%= employee.first_name %> <%= employee.last_name %> <%= employee.position %></li>
+  <li>
+    <% if employee.position == 'owner' %>
+      First Name:<span class = "owner"> <%= employee.first_name %> </span>
+      Last Name: <span class = "owner"> <%= employee.last_name %> </span>
+      <% elsif employee.position == 'commission sales' || employee.position == 'quota sales' %>
+      First Name:<span class = "salesperson"> <%= employee.first_name %> </span>
+      Last Name: <span class = "salesperson"> <%= employee.last_name %> </span>
+      <% else %>
+      First Name:<%= employee.first_name %>
+      Last Name: <%= employee.last_name %>
+      <% end %>
+
+      Position: <%= employee.position %>
+      Net Pay Before Tax: <%= employee.net_pay_before_tax.round(2) %>
+      Commission: <%= employee.commission if employee.position == "commission sales" %>
+      Gross Pay: <%= employee.net_pay_after_tax.round(2) %>
+  </li>
 <% end %>
 </ul>
 

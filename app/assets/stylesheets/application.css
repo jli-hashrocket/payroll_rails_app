@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+span.owner{
+    color:blue;
+    font-size:16px;
+}
+span.salesperson{
+  color:#006600;
+  font-weight: bold;
+}

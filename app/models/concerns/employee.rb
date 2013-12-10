@@ -12,6 +12,7 @@ class Employee
   end
 
   def self.load_employees
+    @@all_employees = []
     employee_info = 'public/employees.csv'
     CSV.foreach(employee_info, headers:true) do |row|
       data = row.to_hash
