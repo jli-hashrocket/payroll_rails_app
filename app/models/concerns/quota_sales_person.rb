@@ -1,5 +1,5 @@
 class QuotaSalesPerson < Employee
-  attr_reader :quota
+  attr_reader :quota, :sales
 
   def initialize(data)
     super(data)

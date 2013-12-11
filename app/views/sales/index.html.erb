@@ -1,6 +1,29 @@
 <p>List your sales here</p>
-<% @sales.each do |sale| %>
-  <li><%= sale['last_name'] %> <%= sale['gross_sale_value'] %></li>
+<% @employees.each do |employee| %>
+  <% if employee.position == 'commission sales' %>
+      <% employee.sales.each do |sale| %>
+      <% if employee.last_name == sale["last_name"] %>
+       <% if employee.first_name == "Ricky" && employee.last_name == 'Bobby' %>
+       <li><span class="ricky"> First Name: <%= employee.first_name %>
+       Last Name: <%= employee.last_name %> </span>
+       <% else %>
+              <li> First Name: <%= employee.first_name %>
+       Last Name: <%= employee.last_name %>
+       <% end %>
+       Sale: <%= sale["gross_sale_value"] %>
+       Commission: <%= employee.counter_sales %></li>
+        <% end %>
+        <% end %>
+  <% end %>
+  <% if employee.position == 'quota sales' %>
+      <% employee.sales.each do |sale| %>
+      <% if employee.last_name == sale["last_name"] %>
+       <li> First Name: <%= employee.first_name %>
+       Last Name: <%= employee.last_name %>
+       Sale: <%= sale["gross_sale_value"] %>
+        <% end %>
+        <% end %>
+  <% end %>
 <% end %>
 
 
